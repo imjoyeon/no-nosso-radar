@@ -79,13 +79,56 @@ color:var(--blue);
 }
 
 .article-hero{
-background:linear-gradient(120deg,var(--dark),#0B3977);
-color:white;
-padding:42px 0;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(120deg,var(--dark),#0B3977);
+  color:white;
 }
-.article-cover{
-  width:min(900px, calc(100% - 40px));
-  margin:32px auto 42px;
+
+.hero-content{
+  width:100%;
+  min-height:390px;
+  display:grid;
+  grid-template-columns:46% 54%;
+  align-items:stretch;
+}
+
+.hero-text{
+  position:relative;
+  z-index:2;
+  padding:58px max(40px, calc((100vw - 1180px) / 2));
+  padding-right:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.hero-image::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0 auto 0 0;
+  width:24%;
+  background:linear-gradient(
+    90deg,
+    #0B3977 0%,
+    rgba(11,57,119,.72) 35%,
+    rgba(11,57,119,0) 100%
+  );
+  pointer-events:none;
 }
 
 .article-cover img{
@@ -305,10 +348,57 @@ footer strong{color:white}
 }
 
 @media(max-width:550px){
-.container{width:calc(100% - 28px)}
-h1{font-size:40px}
-.article-content p{font-size:16px}
-.article-content h2{font-size:27px}
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .hero-content{
+    min-height:0;
+    grid-template-columns:1fr;
+  }
+
+  .hero-text{
+    padding:38px 22px 30px;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+    line-height:1.05;
+    letter-spacing:-1.5px;
+  }
+
+  .hero-text .subtitle{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .hero-image{
+    height:230px;
+  }
+
+  .hero-image img{
+    object-position:68% center;
+  }
+
+  .hero-image::before{
+    inset:0;
+    width:100%;
+    height:35%;
+    background:linear-gradient(
+      180deg,
+      #0B3977 0%,
+      rgba(11,57,119,.55) 40%,
+      rgba(11,57,119,0) 100%
+    );
+  }
+
+  .article-content p{
+    font-size:16px;
+  }
+
+  .article-content h2{
+    font-size:27px;
+  }
 }
 </style>
 </head>
@@ -328,27 +418,30 @@ NO NOSSO
 
 
 <section class="article-hero">
-<div class="container">
+  <div class="hero-content">
 
-<div class="category">Antes de Comprar • Cozinha</div>
+    <div class="hero-text">
+      <div class="category">Antes de Comprar • Cozinha</div>
 
-<h1>Como escolher uma air fryer? O que observar antes de comprar</h1>
+      <h1>Como escolher uma air fryer?</h1>
 
-<p class="subtitle">
-Capacidade, potência e formato mudam bastante entre os modelos.
-Entenda o que realmente merece sua atenção antes de escolher.
-</p>
+      <p class="subtitle">
+        Capacidade, potência, tamanho e formato: veja o que observar antes de comprar.
+      </p>
 
-<p class="updated">Atualizado em setembro de 2026</p>
+      <p class="updated">Atualizado em setembro de 2026</p>
+    </div>
 
-</div>
+    <div class="hero-image">
+      <img
+        src="/imagens/hero-como-escolher-air-fryer.png"
+        alt="Air fryer tradicional e air fryer Oven em uma cozinha"
+      >
+    </div>
+
+  </div>
 </section>
-  <div class="article-cover">
-  <img
-    src="/imagens/capa-como-escolher-air-fryer.png"
-    alt="Guia para escolher uma air fryer, comparando modelos tradicionais e Oven"
-  >
-</div>
+
 
 
 <div class="container layout">
