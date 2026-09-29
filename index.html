@@ -6,18 +6,18 @@
 
   <title>No Nosso Radar | Produtos que merecem sua atenção</title>
 
-  <meta name="description"
-        content="Análises, comparativos e guias para ajudar você a escolher produtos para casa, cozinha, eletrodomésticos e tecnologia.">
+  <meta name="description" content="Análises, comparativos e guias para ajudar você a escolher melhor produtos para casa, cozinha, eletrodomésticos e tecnologia.">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     :root {
       --navy: #0B2545;
+      --navy-dark: #071D37;
       --blue: #2563EB;
       --cyan: #38BDF8;
       --orange: #F97316;
@@ -25,13 +25,18 @@
       --white: #FFFFFF;
       --text: #10233F;
       --muted: #64748B;
+      --border: #E5EAF1;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--white);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     a {
@@ -39,83 +44,92 @@
       text-decoration: none;
     }
 
-    /* CABEÇALHO */
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
 
     header {
-      background: white;
-      border-bottom: 1px solid #E8EDF4;
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 72px;
-      padding: 12px 24px;
-
+    .header-inner {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 32px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      color: var(--navy);
+      gap: 11px;
+      flex-shrink: 0;
     }
 
-    .radar-logo {
-      width: 45px;
-      height: 45px;
-      border: 5px solid var(--blue);
+    .brand-radar {
+      width: 46px;
+      height: 46px;
+      border: 4px solid var(--blue);
       border-radius: 50%;
       position: relative;
     }
 
-    .radar-logo::before {
+    .brand-radar::before {
       content: "";
       position: absolute;
       width: 11px;
       height: 11px;
-      border-radius: 50%;
       background: var(--orange);
-      left: 12px;
-      top: 12px;
+      border-radius: 50%;
+      top: 13px;
+      left: 13px;
     }
 
-    .radar-logo::after {
+    .brand-radar::after {
       content: "";
       position: absolute;
       width: 25px;
       height: 4px;
-      background: var(--cyan);
-      left: 18px;
-      top: 8px;
+      background: var(--blue);
       transform: rotate(-35deg);
-      border-radius: 10px;
+      transform-origin: left center;
+      top: 19px;
+      left: 19px;
+      border-radius: 5px;
     }
 
-    .brand-name {
-      line-height: 1;
+    .brand-text {
+      font-weight: 800;
+      line-height: .9;
       font-size: 15px;
+      letter-spacing: .2px;
     }
 
-    .brand-name strong {
+    .brand-text span {
       display: block;
       color: var(--blue);
-      font-size: 21px;
+      font-size: 22px;
+      margin-top: 4px;
     }
 
     nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 25px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    nav a {
+      transition: color .2s ease;
     }
 
     nav a:hover {
@@ -126,216 +140,374 @@
 
     .hero {
       background:
-        radial-gradient(circle at 80% 50%, #174EA6 0%, transparent 28%),
-        linear-gradient(120deg, #071C36, #0B3B82);
-      color: white;
+        radial-gradient(circle at 78% 45%, rgba(37,99,235,.30), transparent 28%),
+        linear-gradient(115deg, var(--navy-dark), #0B3977);
+      color: var(--white);
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 75px 24px;
+      min-height: 510px;
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.05fr .95fr;
       align-items: center;
-      gap: 50px;
+      gap: 60px;
+      position: relative;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 100px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-label-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.05;
-      max-width: 700px;
-      margin-bottom: 20px;
+      font-size: clamp(46px, 5vw, 68px);
+      line-height: 1.02;
+      max-width: 650px;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
     }
 
     .hero p {
-      color: #D9E7FA;
+      color: #DCE9FA;
       font-size: 18px;
-      max-width: 580px;
+      max-width: 620px;
       margin-bottom: 30px;
     }
 
     .search {
-      display: flex;
-      background: white;
-      border-radius: 50px;
-      padding: 6px;
       max-width: 610px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 7px;
+      display: flex;
+      box-shadow: 0 14px 35px rgba(0,0,0,.16);
     }
 
     .search input {
       flex: 1;
-      border: none;
-      outline: none;
-      padding: 14px 18px;
-      border-radius: 50px;
+      border: 0;
+      outline: 0;
+      padding: 0 16px;
       font-size: 15px;
+      color: var(--text);
+      min-width: 0;
     }
 
     .search button {
-      border: none;
+      border: 0;
       background: var(--blue);
-      color: white;
-      padding: 13px 27px;
-      border-radius: 50px;
+      color: var(--white);
+      padding: 14px 25px;
+      border-radius: 11px;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .radar-art {
-      width: 300px;
-      height: 300px;
-      border: 3px solid rgba(56,189,248,.7);
-      border-radius: 50%;
-      margin: auto;
+    .search button:hover {
+      background: #1D4ED8;
+    }
+
+    /* HERO RADAR */
+
+    .radar-area {
+      height: 390px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
     }
 
-    .radar-art::before,
-    .radar-art::after {
+    .radar {
+      width: 310px;
+      height: 310px;
+      border: 3px solid rgba(56,189,248,.75);
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .radar::before {
       content: "";
       position: absolute;
-      border: 2px solid rgba(56,189,248,.45);
+      width: 190px;
+      height: 190px;
+      border: 2px solid rgba(56,189,248,.55);
       border-radius: 50%;
-      inset: 55px;
     }
 
-    .radar-art::after {
-      inset: 110px;
+    .radar::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(56,189,248,.4);
+      border-radius: 50%;
+    }
+
+    .radar-line {
+      position: absolute;
+      width: 135px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), rgba(249,115,22,0));
+      left: 50%;
+      top: 50%;
+      transform-origin: left center;
+      transform: rotate(-38deg);
+      border-radius: 20px;
+    }
+
+    .radar-center {
+      width: 22px;
+      height: 22px;
       background: var(--orange);
-      border: none;
-      box-shadow: 0 0 30px rgba(249,115,22,.7);
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 30px rgba(249,115,22,.65);
     }
 
-    /* CONTEÚDO */
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 55px 24px;
+    .radar-point {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--cyan);
+      border: 2px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 16px var(--cyan);
     }
 
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: var(--navy);
+    .point-one {
+      top: 65px;
+      right: 70px;
     }
 
-    .grid {
+    .point-two {
+      bottom: 72px;
+      left: 78px;
+    }
+
+    /* MAIN */
+
+    main {
+      background: var(--white);
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 15px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     .category {
-      background: var(--light);
-      border: 1px solid #E8EDF4;
+      min-height: 155px;
+      border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 28px 20px;
-      transition: .2s;
+      padding: 24px;
+      background: var(--white);
+      transition: transform .2s ease, box-shadow .2s ease, border .2s ease;
     }
 
     .category:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(11,37,69,.09);
+      box-shadow: 0 14px 35px rgba(11,37,69,.08);
+      border-color: #C9D8ED;
     }
 
     .category-icon {
-      font-size: 31px;
-      margin-bottom: 15px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #EAF2FF;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 21px;
     }
 
     .category h3 {
-      margin-bottom: 7px;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     .category p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    /* EDITORIAS */
+    /* EDITORIAL */
 
-    .editorias {
-      background: var(--light);
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .editorial-card {
-      background: white;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 27px;
-      border: 1px solid #E7ECF3;
+      min-height: 225px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s ease;
     }
 
-    .editorial-label {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      padding: 6px 11px;
-      border-radius: 50px;
-      margin-bottom: 15px;
-    }
-
-    .radar {
-      background: #FFF0E7;
-      color: #D85B0C;
-    }
-
-    .lupa {
-      background: #E8F1FF;
-      color: var(--blue);
-    }
-
-    .frente {
-      background: #EEEAFE;
-      color: #6246D9;
-    }
-
-    .antes {
-      background: #E6F8EF;
-      color: #15955D;
+    .editorial-card:hover {
+      transform: translateY(-4px);
     }
 
     .editorial-card h3 {
-      margin-bottom: 8px;
+      font-size: 22px;
+      margin: 16px 0 8px;
     }
 
     .editorial-card p {
-      color: var(--muted);
       font-size: 14px;
+      opacity: .78;
     }
 
-    /* DESTAQUES */
+    .editorial-number {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .dark-card {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .blue-card {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .cyan-card {
+      background: #E9F8FE;
+      color: var(--navy);
+    }
+
+    .orange-card {
+      background: #FFF1E8;
+      color: var(--navy);
+    }
+
+    /* ARTICLES */
 
     .articles {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.25fr 1fr 1fr;
       gap: 22px;
     }
 
     .article {
-      border: 1px solid #E7ECF3;
-      border-radius: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
       overflow: hidden;
-      background: white;
+      background: var(--white);
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+
+    .article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(11,37,69,.09);
     }
 
     .article-image {
-      height: 175px;
-      background: linear-gradient(135deg, #E9F1FC, #CDE5FF);
+      height: 205px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(56,189,248,.55), transparent 25%),
+        linear-gradient(135deg, #0B2545, #2563EB);
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 50px;
+      justify-content: center;
+      color: rgba(255,255,255,.88);
+      font-size: 54px;
+      font-weight: 800;
     }
 
-    .article-content {
-      padding: 20px;
+    .article:first-child .article-image {
+      height: 250px;
+    }
+
+    .article-body {
+      padding: 23px;
+    }
+
+    .tag {
+      color: var(--blue);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: 800;
     }
 
     .article h3 {
-      margin: 10px 0;
-      line-height: 1.3;
+      margin: 8px 0 10px;
+      line-height: 1.25;
+      font-size: 20px;
+    }
+
+    .article:first-child h3 {
+      font-size: 25px;
     }
 
     .article p {
@@ -343,27 +515,110 @@
       font-size: 14px;
     }
 
-    /* TRANSPARÊNCIA */
-
-    .disclosure {
-      background: #FFF8F2;
-      border: 1px solid #FFE0C7;
-      padding: 18px 20px;
-      border-radius: 14px;
+    .read-more {
+      display: inline-block;
+      color: var(--blue);
+      font-weight: 700;
       font-size: 13px;
-      color: #6E4B32;
-      margin-top: 40px;
+      margin-top: 17px;
     }
+
+    /* TRUST */
+
+    .trust {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .trust-inner {
+      padding: 55px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .trust h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 13px;
+    }
+
+    .trust p {
+      color: #C9D7E8;
+      font-size: 15px;
+    }
+
+    .trust-points {
+      display: grid;
+      gap: 13px;
+    }
+
+    .trust-point {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: rgba(56,189,248,.15);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: var(--navy);
-      color: #D8E2F0;
-      text-align: center;
-      padding: 35px 20px;
+      background: #06182D;
+      color: #B8C7D9;
+      padding: 38px 0;
       font-size: 13px;
     }
 
-    /* MOBILE */
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .disclosure {
+      max-width: 650px;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1050px) {
+      nav {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1.1fr .9fr;
+      }
+
+      .radar {
+        width: 270px;
+        height: 270px;
+      }
+    }
 
     @media (max-width: 850px) {
       nav {
@@ -372,34 +627,83 @@
 
       .hero-inner {
         grid-template-columns: 1fr;
-        padding-top: 55px;
-        padding-bottom: 55px;
+        padding: 65px 0;
       }
 
-      .radar-art {
+      .radar-area {
         display: none;
       }
 
-      .grid {
+      .categories,
+      .editorial-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .articles {
         grid-template-columns: 1fr;
       }
+
+      .article:first-child .article-image,
+      .article-image {
+        height: 210px;
+      }
+
+      .trust-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
     }
 
-    @media (max-width: 520px) {
-      .grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .header-inner {
+        min-height: 70px;
       }
 
       .hero h1 {
-        font-size: 39px;
+        font-size: 43px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .search {
+        border-radius: 13px;
       }
 
       .search button {
-        padding: 12px 18px;
+        padding: 13px 17px;
+      }
+
+      .categories,
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 12px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .disclosure {
+        text-align: left;
+        margin-top: 16px;
       }
     }
   </style>
@@ -408,14 +712,14 @@
 <body>
 
 <header>
-  <div class="nav">
+  <div class="container header-inner">
 
-    <a class="brand" href="#">
-      <div class="radar-logo"></div>
+    <a href="#" class="brand">
+      <div class="brand-radar"></div>
 
-      <div class="brand-name">
+      <div class="brand-text">
         NO NOSSO
-        <strong>RADAR</strong>
+        <span>RADAR</span>
       </div>
     </a>
 
@@ -436,35 +740,47 @@
 
 <section class="hero">
 
-  <div class="hero-inner">
+  <div class="container hero-inner">
 
     <div>
 
-      <h1>
-        Produtos que merecem sua atenção.
-      </h1>
+      <div class="hero-label">
+        <span class="hero-label-dot"></span>
+        ESCOLHAS MAIS INFORMADAS
+      </div>
+
+      <h1>Produtos que merecem sua atenção.</h1>
 
       <p>
         Análises, comparativos e guias para ajudar você a escolher melhor
-        e facilitar o seu dia a dia.
+        antes de comprar.
       </p>
 
       <div class="search">
-
         <input
-          type="search"
+          type="text"
           placeholder="Pesquise um produto, marca ou categoria..."
-          aria-label="Pesquisar">
-
-        <button>
-          Buscar
-        </button>
-
+          aria-label="Pesquisar"
+        >
+        <button type="button">Buscar</button>
       </div>
 
     </div>
 
-    <div class="radar-art"></div>
+
+    <div class="radar-area">
+
+      <div class="radar">
+
+        <div class="radar-line"></div>
+        <div class="radar-center"></div>
+
+        <div class="radar-point point-one"></div>
+        <div class="radar-point point-two"></div>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -473,131 +789,253 @@
 
 <main>
 
-<section
-  class="container"
-  id="categorias">
+  <section class="section" id="categorias">
 
-  <h2 class="section-title">
-    Explore nossas principais categorias
-  </h2>
+    <div class="container">
 
-  <div class="grid">
+      <div class="section-header">
 
-    <article class="category">
-      <div class="category-icon">🏠</div>
-      <h3>Casa</h3>
-      <p>
-        Organização, limpeza e produtos para facilitar a rotina.
-      </p>
-    </article>
+        <div>
+          <div class="eyebrow">Explore</div>
+          <h2>Encontre o que está no seu radar</h2>
+        </div>
 
-    <article class="category">
-      <div class="category-icon">🍳</div>
-      <h3>Cozinha</h3>
-      <p>
-        Utensílios e produtos para deixar a cozinha mais prática.
-      </p>
-    </article>
-
-    <article class="category">
-      <div class="category-icon">🔌</div>
-      <h3>Eletrodomésticos</h3>
-      <p>
-        Air fryers, aspiradores, cafeteiras e muito mais.
-      </p>
-    </article>
-
-    <article class="category">
-      <div class="category-icon">💻</div>
-      <h3>Tecnologia</h3>
-      <p>
-        Dispositivos e acessórios para o cotidiano.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-
-<section
-  class="editorias"
-  id="editorias">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Um jeito simples de escolher melhor
-    </h2>
-
-    <div class="grid">
-
-      <article class="editorial-card">
-
-        <span class="editorial-label radar">
-          📡 No Radar
-        </span>
-
-        <h3>
-          Tendências e novidades
-        </h3>
-
-        <p>
-          Produtos e categorias que estão ganhando atenção.
+        <p class="section-description">
+          Conteúdo organizado para tornar sua pesquisa mais simples,
+          da cozinha à tecnologia do dia a dia.
         </p>
 
-      </article>
+      </div>
 
 
-      <article class="editorial-card">
+      <div class="categories">
 
-        <span class="editorial-label lupa">
-          🔎 Na Lupa
-        </span>
+        <a href="#" class="category">
+          <div class="category-icon">C</div>
+          <h3>Casa</h3>
+          <p>Produtos e soluções para deixar a rotina mais prática.</p>
+        </a>
 
-        <h3>
-          Análises detalhadas
-        </h3>
+        <a href="#" class="category">
+          <div class="category-icon">CZ</div>
+          <h3>Cozinha</h3>
+          <p>Utensílios e equipamentos que merecem uma análise.</p>
+        </a>
 
-        <p>
-          Olhamos de perto características, vantagens e limitações.
+        <a href="#" class="category">
+          <div class="category-icon">E</div>
+          <h3>Eletrodomésticos</h3>
+          <p>Informação para escolher aparelhos com mais segurança.</p>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">T</div>
+          <h3>Tecnologia</h3>
+          <p>Produtos úteis para uma rotina cada vez mais conectada.</p>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section section-light" id="editorias">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div>
+          <div class="eyebrow">Nosso conteúdo</div>
+          <h2>Um jeito mais simples de decidir</h2>
+        </div>
+
+        <p class="section-description">
+          Da descoberta à comparação, cada editoria foi criada para
+          responder uma etapa diferente da sua decisão de compra.
         </p>
 
-      </article>
+      </div>
 
 
-      <article class="editorial-card">
+      <div class="editorial-grid">
 
-        <span class="editorial-label frente">
-          ⚖️ Frente a Frente
-        </span>
+        <a href="#" class="editorial-card dark-card">
+          <div class="editorial-number">01</div>
+          <h3>No Radar</h3>
+          <p>
+            Produtos, novidades e tendências que estão chamando atenção.
+          </p>
+        </a>
 
-        <h3>
-          Comparativos
-        </h3>
+        <a href="#" class="editorial-card blue-card">
+          <div class="editorial-number">02</div>
+          <h3>Na Lupa</h3>
+          <p>
+            Uma análise mais cuidadosa para entender os detalhes antes da compra.
+          </p>
+        </a>
 
-        <p>
-          Colocamos produtos lado a lado para mostrar as diferenças.
+        <a href="#" class="editorial-card cyan-card">
+          <div class="editorial-number">03</div>
+          <h3>Frente a Frente</h3>
+          <p>
+            Comparativos objetivos para entender o que muda entre as opções.
+          </p>
+        </a>
+
+        <a href="#" class="editorial-card orange-card">
+          <div class="editorial-number">04</div>
+          <h3>Antes de Comprar</h3>
+          <p>
+            Guias para saber o que realmente observar antes de escolher.
+          </p>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div>
+          <div class="eyebrow">Em destaque</div>
+          <h2>Comece por aqui</h2>
+        </div>
+
+        <p class="section-description">
+          Conteúdos pensados para responder às dúvidas que aparecem
+          antes de clicar em comprar.
         </p>
 
-      </article>
+      </div>
 
 
-      <article class="editorial-card">
+      <div class="articles">
 
-        <span class="editorial-label antes">
-          📖 Antes de Comprar
-        </span>
+        <article class="article">
 
-        <h3>
-          Guias de compra
-        </h3>
+          <div class="article-image">01</div>
 
-        <p>
-          O que você precisa saber antes de decidir.
-        </p>
+          <div class="article-body">
+            <span class="tag">Antes de Comprar</span>
 
-      </article>
+            <h3>
+              Air fryer: o que observar antes de escolher a sua?
+            </h3>
+
+            <p>
+              Capacidade, potência, espaço e recursos: entenda quais
+              características realmente fazem diferença.
+            </p>
+
+            <a href="#" class="read-more">Ler guia →</a>
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-image">02</div>
+
+          <div class="article-body">
+            <span class="tag">Na Lupa</span>
+
+            <h3>Robô aspirador vale a pena?</h3>
+
+            <p>
+              Veja em quais situações ele pode facilitar a rotina e o que
+              considerar antes da compra.
+            </p>
+
+            <a href="#" class="read-more">Ver análise →</a>
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-image">03</div>
+
+          <div class="article-body">
+            <span class="tag">Antes de Comprar</span>
+
+            <h3>Como escolher uma cafeteira para sua rotina</h3>
+
+            <p>
+              Tipos, capacidade e praticidade: os principais pontos para
+              encontrar uma opção adequada ao seu uso.
+            </p>
+
+            <a href="#" class="read-more">Ler guia →</a>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<section class="trust">
+
+  <div class="container trust-inner">
+
+    <div>
+
+      <div class="eyebrow" style="color:#38BDF8;">
+        Nossa proposta
+      </div>
+
+      <h2>
+        Menos impulso.<br>
+        Mais informação antes da compra.
+      </h2>
+
+      <p>
+        O No Nosso Radar nasceu para reunir informações úteis e tornar
+        escolhas de produtos mais simples e conscientes.
+      </p>
+
+    </div>
+
+
+    <div class="trust-points">
+
+      <div class="trust-point">
+        <span class="check">✓</span>
+        Comparações fáceis de entender
+      </div>
+
+      <div class="trust-point">
+        <span class="check">✓</span>
+        Pontos importantes antes da compra
+      </div>
+
+      <div class="trust-point">
+        <span class="check">✓</span>
+        Conteúdo organizado por necessidade
+      </div>
+
+      <div class="trust-point">
+        <span class="check">✓</span>
+        Transparência sobre links de afiliados
+      </div>
 
     </div>
 
@@ -606,115 +1044,24 @@
 </section>
 
 
-<section class="container">
-
-  <h2 class="section-title">
-    Em destaque no nosso radar
-  </h2>
-
-  <div class="articles">
-
-    <article class="article">
-
-      <div class="article-image">
-        🍟
-      </div>
-
-      <div class="article-content">
-
-        <span class="editorial-label radar">
-          No Radar
-        </span>
-
-        <h3>
-          Air fryer: o que observar antes de escolher?
-        </h3>
-
-        <p>
-          Capacidade, potência e recursos que realmente fazem diferença.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article class="article">
-
-      <div class="article-image">
-        🤖
-      </div>
-
-      <div class="article-content">
-
-        <span class="editorial-label lupa">
-          Na Lupa
-        </span>
-
-        <h3>
-          Robô aspirador vale a pena?
-        </h3>
-
-        <p>
-          Entenda onde ele ajuda e quais características analisar.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article class="article">
-
-      <div class="article-image">
-        ☕
-      </div>
-
-      <div class="article-content">
-
-        <span class="editorial-label antes">
-          Antes de Comprar
-        </span>
-
-        <h3>
-          Como escolher uma cafeteira para sua rotina
-        </h3>
-
-        <p>
-          Elétrica, cápsula ou espresso? Veja as principais diferenças.
-        </p>
-
-      </div>
-
-    </article>
-
-  </div>
-
-
-  <div class="disclosure">
-
-    <strong>Transparência:</strong>
-    o No Nosso Radar pode utilizar links de afiliados.
-    Quando uma compra é realizada através desses links,
-    podemos receber uma comissão, sem custo adicional para você.
-
-  </div>
-
-</section>
-
-</main>
-
-
 <footer>
 
-  <strong>No Nosso Radar</strong>
-  <br>
+  <div class="container footer-inner">
 
-  Produtos que merecem sua atenção.
+    <div>
+      <div class="footer-brand">NO NOSSO RADAR</div>
+      <div>Produtos que merecem sua atenção.</div>
+      <div style="margin-top:8px;">© 2026 No Nosso Radar</div>
+    </div>
 
-  <br><br>
+    <div class="disclosure">
+      <strong style="color:white;">Transparência:</strong>
+      o No Nosso Radar pode utilizar links de afiliados. Quando uma compra
+      é realizada através desses links, podemos receber uma comissão,
+      sem custo adicional para você.
+    </div>
 
-  © 2026 No Nosso Radar
+  </div>
 
 </footer>
 
