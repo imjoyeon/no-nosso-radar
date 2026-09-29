@@ -71,17 +71,16 @@ header{
 }
 
 .brand{
-  font-weight:900;
-  color:var(--navy);
-  font-size:15px;
-  line-height:1;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
 }
 
-.brand span{
+.brand-logo{
   display:block;
-  font-size:22px;
-  color:var(--blue);
-  margin-top:4px;
+  width:auto;
+  height:58px;
+  object-fit:contain;
 }
 
 .back{
@@ -597,11 +596,13 @@ footer strong{
 
 <header>
   <div class="container header">
-    <a href="/" class="brand">
-      NO NOSSO
-      <span>RADAR</span>
-    </a>
-
+  <a href="/" class="brand">
+  <img
+    src="/imagens/logo-no-nosso-radar-principal.png"
+    alt="No Nosso Radar"
+    class="brand-logo"
+  >
+</a>
     <a href="/" class="back">← Voltar para a página inicial</a>
   </div>
 </header>
