@@ -493,7 +493,12 @@
     .article:first-child .article-image {
       height: 250px;
     }
-
+.article-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
     .article-body {
       padding: 23px;
     }
@@ -929,7 +934,13 @@
 
         <article class="article">
 
-          <div class="article-image">01</div>
+          <div class="article-image">
+  <img
+    src="/imagens/hero-como-escolher-air-fryer.png"
+    alt="Como escolher uma air fryer"
+    loading="lazy"
+  >
+</div>
 
           <div class="article-body">
             <span class="tag">Antes de Comprar</span>
