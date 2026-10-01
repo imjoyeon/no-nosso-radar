@@ -6,15 +6,15 @@
 
 <title>Como escolher uma air fryer? | No Nosso Radar</title>
 
-<meta name="description" content="Veja como escolher uma air fryer considerando capacidade real, formato do cesto, potência, tamanho, limpeza e diferenças entre modelos tradicionais e Oven.">
+<meta name="description" content="Veja como escolher uma air fryer considerando capacidade útil, formato do cesto, espaço, limpeza, instalação e diferenças entre modelos tradicionais e Oven.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="No Nosso Radar">
 <meta property="og:title" content="Como escolher uma air fryer?">
-<meta property="og:description" content="Entenda o que muda entre 4 L, 5 L e uma Oven de 12 L antes de escolher sua air fryer.">
-<meta property="og:image" content="https://no-nosso-radar.naweb.workers.dev/imagens/capa-como-escolher-air-fryer.png">
+<meta property="og:description" content="Entenda o que observar antes de comprar e compare modelos tradicionais de 4 a 5 L com uma Air Fryer Oven de 12 L.">
+<meta property="og:image" content="https://no-nosso-radar.naweb.workers.dev/imagens/hero-como-escolher-air-fryer.png">
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -36,7 +36,6 @@
   --muted:#64748B;
   --border:#E5EAF1;
   --white:#fff;
-  --green:#15803D;
 }
 
 body{
@@ -173,7 +172,7 @@ h1{
   margin-top:24px;
 }
 
-/* ARTICLE */
+/* ARTIGO */
 
 .layout{
   display:grid;
@@ -200,21 +199,40 @@ h1{
   margin:30px 0 12px;
 }
 
-.highlight{
-  background:#EFF6FF;
-  border-left:4px solid var(--blue);
-  padding:22px 25px;
-  border-radius:0 12px 12px 0;
-  margin:30px 0;
-}
-
 .notice{
   background:#FFF7ED;
   border:1px solid #FED7AA;
   border-radius:14px;
   padding:18px 20px;
   font-size:14px;
-  margin-bottom:35px;
+  margin-bottom:30px;
+}
+
+/* INFOGRÁFICOS */
+
+.guide-visual{
+  margin:32px 0 38px;
+}
+
+.guide-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:18px;
+}
+
+.coating-note{
+  background:#F8FAFC;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 20px;
+  margin:28px 0 38px;
+  font-size:15px;
+  line-height:1.65;
+}
+
+.coating-note strong{
+  color:var(--navy);
 }
 
 /* COMPARAÇÃO */
@@ -275,24 +293,7 @@ h1{
 .product h3{
   margin:7px 0 12px;
 }
-.product-image{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  border-radius:14px;
-  padding:18px;
-  margin:6px 0 22px;
-}
 
-.product-image img{
-  display:block;
-  width:auto;
-  max-width:100%;
-  height:300px;
-  object-fit:contain;
-}
 .specs{
   display:inline-block;
   background:var(--light);
@@ -301,7 +302,42 @@ h1{
   font-weight:600;
   padding:8px 12px;
   border-radius:8px;
-  margin-bottom:16px;
+  margin-bottom:18px;
+}
+
+/* IMAGEM + TEXTO LADO A LADO NO COMPUTADOR */
+
+.product-main{
+  display:grid;
+  grid-template-columns:minmax(190px,34%) minmax(0,1fr);
+  gap:26px;
+  align-items:start;
+  margin-top:4px;
+}
+
+.product-image{
+  min-height:275px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:14px;
+  padding:8px;
+}
+
+.product-image img{
+  display:block;
+  width:100%;
+  height:260px;
+  object-fit:contain;
+}
+
+.product-copy{
+  min-width:0;
+}
+
+.product-copy > p{
+  margin-top:0;
 }
 
 .product-info{
@@ -427,6 +463,7 @@ footer strong{
 /* TABLET */
 
 @media(max-width:850px){
+
   .layout{
     grid-template-columns:1fr;
   }
@@ -440,7 +477,7 @@ footer strong{
   }
 }
 
-/* MOBILE */
+/* CELULAR */
 
 @media(max-width:550px){
 
@@ -452,12 +489,8 @@ footer strong{
     height:68px;
   }
 
-  .brand{
-    font-size:13px;
-  }
-
-  .brand span{
-    font-size:19px;
+  .brand-logo{
+    height:50px;
   }
 
   .back{
@@ -476,10 +509,6 @@ footer strong{
     min-width:0;
     width:100%;
     max-width:100%;
-  }
-
-  .sidebox{
-    display:none;
   }
 
   .article-hero{
@@ -543,13 +572,23 @@ footer strong{
     font-size:21px;
   }
 
-  .highlight{
-    padding:19px 18px;
-  }
-
   .notice{
     padding:16px;
     font-size:13px;
+  }
+
+  .guide-visual{
+    margin:25px 0 30px;
+  }
+
+  .guide-visual img{
+    border-radius:12px;
+  }
+
+  .coating-note{
+    padding:16px;
+    font-size:14px;
+    margin:24px 0 32px;
   }
 
   .comparison{
@@ -568,6 +607,24 @@ footer strong{
     line-height:1.55;
   }
 
+  .product-main{
+    display:block;
+    margin-top:0;
+  }
+
+  .product-image{
+    min-height:0;
+    padding:10px;
+    margin:4px 0 18px;
+  }
+
+  .product-image img{
+    width:100%;
+    height:auto;
+    max-height:260px;
+    object-fit:contain;
+  }
+
   .product-info div{
     font-size:14px;
   }
@@ -577,17 +634,6 @@ footer strong{
     width:100%;
     padding:14px 16px;
   }
-  .product-image{
-  padding:10px;
-  margin:4px 0 18px;
-}
-
-.product-image img{
-  width:100%;
-  height:auto;
-  max-height:280px;
-  object-fit:contain;
-}
 }
 </style>
 </head>
@@ -596,23 +642,30 @@ footer strong{
 
 <header>
   <div class="container header">
-  <a href="/" class="brand">
-  <img
-    src="/imagens/logo-no-nosso-radar-principal.png"
-    alt="No Nosso Radar"
-    class="brand-logo"
-  >
-</a>
+
+    <a href="/" class="brand">
+      <img
+        src="/imagens/logo-no-nosso-radar-principal.png"
+        alt="No Nosso Radar"
+        class="brand-logo"
+      >
+    </a>
+
     <a href="/" class="back">← Voltar para a página inicial</a>
+
   </div>
 </header>
 
 
 <section class="article-hero">
+
   <div class="hero-content">
 
     <div class="hero-text">
-      <div class="category">Antes de Comprar • Cozinha</div>
+
+      <div class="category">
+        Antes de Comprar • Cozinha
+      </div>
 
       <h1>Como escolher uma air fryer?</h1>
 
@@ -621,17 +674,24 @@ footer strong{
         muda antes de comprar.
       </p>
 
-      <p class="updated">Atualizado em setembro de 2026</p>
+      <p class="updated">
+        Atualizado em outubro de 2026
+      </p>
+
     </div>
 
+
     <div class="hero-image">
+
       <img
         src="/imagens/hero-como-escolher-air-fryer.png"
         alt="Air fryer tradicional e air fryer Oven em uma cozinha"
       >
+
     </div>
 
   </div>
+
 </section>
 
 
@@ -639,331 +699,236 @@ footer strong{
 
 <article class="article-content">
 
+
 <div class="notice">
+
   <strong>Transparência:</strong> este conteúdo contém links de afiliados.
   Se você realizar uma compra por meio deles, o No Nosso Radar pode receber
   uma comissão, sem custo adicional para você. Os produtos não foram testados
   fisicamente pelo No Nosso Radar; a análise considera especificações dos
   fabricantes, informações dos anúncios e características destacadas por compradores.
+
 </div>
 
 
 <p>
-Escolher uma air fryer não é apenas decidir quantos litros ou quantos watts
-o aparelho deve ter. O formato e a área útil do cesto, o espaço disponível
-na cozinha e o tipo de preparo que você costuma fazer também ajudam a
-entender qual modelo combina melhor com a sua rotina.
+Escolher uma air fryer vai além de comparar litros e potência. O formato e
+a área útil do cesto, o espaço disponível na cozinha, a facilidade de limpeza
+e o tipo de preparo também ajudam a entender qual configuração faz mais sentido
+para a sua rotina.
 </p>
 
 <p>
-Na prática, dois modelos com capacidades diferentes podem acomodar
-quantidades semelhantes de determinados alimentos. E uma Air Fryer Oven
-de 12 litros, por exemplo, não equivale simplesmente a um cesto tradicional
-de 12 litros: sua proposta combina air fryer e forno e utiliza o espaço
-interno de outra maneira.
+Antes de comparar os modelos, veja de forma rápida os principais pontos que
+merecem atenção.
 </p>
 
 
-<div class="highlight">
-  <strong>Resposta rápida:</strong><br><br>
+<section id="o-que-observar" class="guide-visual">
 
-  <strong>Não escolha apenas pelos litros:</strong> observe também formato
-  e área útil do cesto. Entre os modelos analisados, uma air fryer de 4 L
-  e outra de 5 L chegam a acomodar quantidades semelhantes de alguns
-  alimentos nos exemplos apresentados pela fabricante.<br><br>
+  <img
+    src="/imagens/infografico-como-escolher-air-fryer.png"
+    alt="Infográfico com os principais pontos para observar antes de escolher uma air fryer: capacidade útil, espaço na cozinha, limpeza e praticidade e instalação."
+    loading="lazy"
+  >
 
-  <strong>Prefere o cesto tradicional?</strong> Os modelos de 4 a 5 L
-  analisados mantêm o uso simples do cesto removível, mas diferem em
-  potência, área interna, revestimento e recursos adicionais.<br><br>
+</section>
 
-  <strong>Quer mais versatilidade?</strong> A Oven de 12 L analisada é
-  2 em 1: Air Fryer + Forno. Ela combina cesto de 5 L, assadeiras,
-  três níveis internos, painel digital e visor com iluminação.<br><br>
 
-  Antes de comprar, considere também <strong>dimensões, limpeza,
-  controles, potência, voltagem e tipo de tomada</strong>.
+<section id="tipos" class="guide-visual">
+
+  <img
+    src="/imagens/infografico-air-fryer-tradicional-vs-oven.png"
+    alt="Comparação entre air fryer tradicional e air fryer Oven, incluindo formato, praticidade, preços, níveis internos, visor e capacidade."
+    loading="lazy"
+  >
+
+</section>
+
+
+<div id="revestimentos" class="coating-note">
+
+  <strong>Duraflon x Black Resist:</strong> os dois são revestimentos
+  antiaderentes que ajudam a evitar que os alimentos grudem e facilitam
+  a limpeza. O Black Resist, utilizado pela Elgin, possui
+  <strong>três camadas</strong>, enquanto o Duraflon equipa os modelos
+  Mondial analisados.
+
 </div>
 
 
-<h2 id="capacidade">1. Quantos litros escolher?</h2>
+<h2 id="modelos">
+  Compare os quatro modelos
+</h2>
 
 <p>
-A capacidade em litros é uma referência importante, mas não revela sozinha
-quanto alimento poderá ser distribuído dentro da air fryer. Formato,
-profundidade e principalmente a área disponível para espalhar os alimentos
-também interferem no uso prático.
-</p>
-
-<p>
-Um bom exemplo aparece em dois modelos da própria Mondial. A AFN-40-BFT
-possui 4 litros e 410 cm² de área plana, enquanto a AFN-50-BI possui
-5 litros e 450 cm².
-</p>
-
-<div class="highlight">
-  <strong>4 L × 5 L na prática:</strong><br><br>
-
-  Nas ilustrações divulgadas pela Mondial, tanto a AFN-40 de 4 L quanto
-  a AFN-50 de 5 L são exemplificadas com até
-  <strong>16 mini-hambúrgueres, 16 tulipas de frango,
-  5 postas de salmão ou 1 bolo médio</strong>.<br><br>
-
-  Isso não significa que os dois cestos sejam iguais. A AFN-50 possui
-  maior volume e área plana, mas mostra por que comparar apenas o número
-  de litros pode dar uma impressão incompleta da capacidade prática.
-</div>
-
-<p>
-Por isso, pense também no tipo de alimento que você costuma preparar.
-Alimentos que precisam ficar espalhados pelo cesto dependem bastante da
-área útil disponível, enquanto outros preparos podem aproveitar melhor
-a profundidade e o volume interno.
-</p>
-
-
-<h2 id="tradicional">2. Air fryer tradicional ou Oven?</h2>
-
-<h3>Air fryer tradicional</h3>
-
-<p>
-Nos modelos tradicionais analisados, o alimento é colocado em um cesto
-removível frontal. É uma proposta simples: retirar o cesto, colocar os
-alimentos, ajustar tempo e temperatura e iniciar o preparo.
-</p>
-
-<p>
-AFN-40, Elgin Quad Fry e AFN-50 seguem essa lógica, embora apresentem
-diferenças de capacidade, potência, revestimento e recursos.
-</p>
-
-
-<h3>Air Fryer Oven: 2 em 1</h3>
-
-<p>
-A Mondial AFON-12L-BI tem uma proposta diferente. A fabricante a apresenta
-como um aparelho <strong>2 em 1: Air Fryer + Forno</strong>.
-</p>
-
-<p>
-Os 12 litros representam a capacidade interna total — não um cesto de
-12 litros. O aparelho possui <strong>cesto de 5 L</strong> e três níveis
-internos para utilização das assadeiras.
-</p>
-
-<p>
-Ela também possui porta frontal de vidro, iluminação interna e permite
-acompanhar o preparo sem precisar abrir a porta. É uma configuração
-interessante para quem pretende aproveitar funções semelhantes às de um
-pequeno forno além do uso tradicional de air fryer.
-</p>
-
-
-<h2 id="potencia">3. Potência importa?</h2>
-
-<p>
-Potência está relacionada ao funcionamento e aquecimento do aparelho,
-mas um número maior não significa automaticamente que uma air fryer
-prepare todos os alimentos melhor ou mais rapidamente que outra.
-</p>
-
-<p>
-Nos modelos analisados, encontramos 1400 W na Elgin Quad Fry,
-1500 W na Mondial AFN-40 e 1900 W na AFN-50. A Oven AFON-12L-BI
-possui 2000 W na versão 127 V e 2200 W na versão 220 V.
-</p>
-
-<p>
-Use a potência como uma das características da comparação, e não como
-único critério de escolha.
-</p>
-
-
-<h2 id="espaco">4. Meça a bancada antes de comprar</h2>
-
-<p>
-Capacidade interna e tamanho externo não são a mesma coisa. Antes da
-compra, verifique onde o aparelho ficará e considere também o espaço
-necessário para ventilação e movimentação segura do cesto ou da porta.
-</p>
-
-<p>
-A Elgin Quad Fry informada no anúncio mede aproximadamente
-29,6 cm de altura, 35,8 cm de largura e 23,8 cm de profundidade,
-com peso aproximado de 3,3 kg.
-</p>
-
-<p>
-A Mondial AFON-12L-BI mede aproximadamente 39 cm de altura,
-32 cm de largura e 36,1 cm de profundidade considerando o puxador,
-e pesa cerca de 7,6 kg.
-</p>
-
-<p>
-A diferença é importante principalmente para quem possui pouco espaço
-livre na bancada.
-</p>
-
-
-<h2 id="limpeza">5. Cesto, revestimento e limpeza</h2>
-
-<p>
-Peças removíveis e revestimentos antiaderentes podem facilitar bastante
-a limpeza, mas é importante seguir as orientações de cada fabricante para
-preservar o revestimento.
-</p>
-
-<p>
-As Mondial AFN-40 e AFN-50 utilizam revestimento antiaderente
-<strong>Duraflon</strong>. Já a Elgin Quad Fry possui revestimento
-<strong>Black Resist triplo antiaderente</strong>, além de grelha removível
-e bandeja coletora.
-</p>
-
-<p>
-A Oven utiliza cesto e assadeiras removíveis. Como possui uma cavidade
-maior e mais acessórios, a experiência de limpeza é naturalmente
-diferente daquela encontrada em um único cesto tradicional.
-</p>
-
-
-<h2 id="controles">6. Controles e timer</h2>
-
-<p>
-Os modelos tradicionais desta seleção priorizam controles simples de
-tempo e temperatura. Para quem quer colocar o alimento e fazer os ajustes
-manualmente, isso pode ser suficiente.
-</p>
-
-<p>
-AFN-40, Elgin Quad Fry e AFN-50 possuem timer de até 60 minutos.
-AFN-40 e Elgin trabalham na faixa informada de 80 °C a 200 °C,
-enquanto a AFN-50 chega a 200 °C.
-</p>
-
-<p>
-A AFON-12L-BI se diferencia com <strong>painel digital touch,
-timer de até 90 minutos e 10 funções predefinidas</strong>: batata,
-frango, carne, peixe, camarão, pão de queijo, pizza, bolo, legumes
-e reaquecer.
-</p>
-
-
-<h2 id="voltagem">7. Voltagem e tomada também importam</h2>
-
-<p>
-Antes de finalizar a compra, confira se a versão selecionada corresponde
-à tensão da sua residência. Os modelos são vendidos em versões específicas
-e não devem ser considerados bivolt quando o fabricante não os classifica
-dessa forma.
-</p>
-
-<p>
-Também confira o tipo de tomada exigido pelo aparelho. A AFN-40-BFT e a
-AFON-12L-BI analisadas, por exemplo, são especificadas com plugue de
-<strong>20 A</strong>.
-</p>
-
-
-<h2 id="modelos">Compare os quatro modelos</h2>
-
-<p>
-Agora que as diferenças fazem mais sentido, veja uma visão rápida de
-como cada configuração se posiciona.
+Agora que os principais formatos e critérios estão claros, veja uma comparação
+rápida dos quatro modelos analisados neste guia.
 </p>
 
 
 <div class="comparison">
 
   <div class="comparison-card">
+
     <strong>Mondial AFN-40-BFT</strong>
+
     <span>4 L • 1500 W</span>
     <span>410 cm² de área plana</span>
     <span>Cesto quadrado tradicional</span>
     <span>Duraflon</span>
+
   </div>
 
+
   <div class="comparison-card">
+
     <strong>Elgin Quad Fry</strong>
+
     <span>4,2 L • 1400 W</span>
     <span>Formato quadrado</span>
     <span>Black Resist triplo</span>
     <span>Proteção contra superaquecimento</span>
+
   </div>
 
+
   <div class="comparison-card">
+
     <strong>Mondial AFN-50-BI</strong>
+
     <span>5 L • 1900 W</span>
     <span>450 cm² de área plana</span>
     <span>Cesto quadrado tradicional</span>
     <span>Duraflon</span>
+
   </div>
 
+
   <div class="comparison-card">
+
     <strong>Mondial AFON-12L-BI</strong>
+
     <span>2 em 1: Air Fryer + Forno</span>
     <span>12 L totais • cesto de 5 L</span>
     <span>3 níveis internos</span>
     <span>Painel digital + 10 funções</span>
+
   </div>
 
 </div>
 
 
-<h2>Conheça melhor cada modelo</h2>
+<h2 id="detalhes">
+  Conheça melhor cada modelo
+</h2>
 
+
+<!-- MONDIAL AFN-40 -->
 
 <div class="product">
 
-  <span class="product-label">4 litros • cesto tradicional</span>
+  <span class="product-label">
+    4 litros • cesto tradicional
+  </span>
 
   <h3>Mondial AFN-40-BFT</h3>
+
 
   <div class="specs">
     4 L • 1500 W • 410 cm² de área plana • 80–200 °C • timer de 60 min
   </div>
-  <div class="product-image">
-  <img
-    src="/imagens/afn-40-bft.jpg"
-    alt="Air Fryer Mondial AFN-40-BFT 4 litros"
-    loading="lazy"
-  >
-</div>
 
-  <p>
-    Uma característica interessante da AFN-40 é combinar 4 litros com
-    cesto quadrado e design compacto. A área plana informada é de
-    410 cm², ajudando a distribuir os alimentos dentro do cesto.
-  </p>
 
-  <div class="capacity-example">
-    <strong>Quanto cabe?</strong><br>
-    Nos exemplos divulgados pela Mondial: até 16 mini-hambúrgueres,
-    16 tulipas de frango, 5 postas de salmão ou 1 bolo médio.
+  <div class="product-main">
+
+
+    <div class="product-image">
+
+      <img
+        src="/imagens/afn-40-bft.jpg"
+        alt="Air Fryer Mondial AFN-40-BFT 4 litros"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div class="product-copy">
+
+      <p>
+        Uma característica interessante da AFN-40 é combinar 4 litros com
+        cesto quadrado e design compacto. A área plana informada é de
+        410 cm², ajudando a distribuir os alimentos dentro do cesto.
+      </p>
+
+
+      <div class="capacity-example">
+
+        <strong>Quanto cabe?</strong><br>
+
+        Nos exemplos divulgados pela Mondial: até 16 mini-hambúrgueres,
+        16 tulipas de frango, 5 postas de salmão ou 1 bolo médio.
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div>
+          <strong>Revestimento:</strong>
+          antiaderente Duraflon.
+        </div>
+
+        <div>
+          <strong>Controles:</strong>
+          painel analógico, temperatura de 80 °C a 200 °C e timer de 60 minutos.
+        </div>
+
+        <div>
+          <strong>Segurança:</strong>
+          aviso sonoro e desligamento automático.
+        </div>
+
+        <div>
+          <strong>Versatilidade:</strong>
+          pode fritar a ar, assar, cozinhar e tostar diferentes tipos de alimentos.
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="product-info">
-    <div><strong>Revestimento:</strong> antiaderente Duraflon.</div>
-    <div><strong>Controles:</strong> painel analógico, temperatura de 80 °C a 200 °C e timer de 60 minutos.</div>
-    <div><strong>Segurança:</strong> aviso sonoro e desligamento automático.</div>
-    <div><strong>Versatilidade:</strong> pode fritar a ar, assar, cozinhar e tostar diferentes tipos de alimentos.</div>
-  </div>
 
   <div class="buyers">
-    <strong>O que aparece nas avaliações:</strong> compradores destacam
-    espaço interno, rapidez, facilidade de limpeza, design e custo-benefício.
+
+    <strong>O que aparece nas avaliações:</strong>
+    compradores destacam espaço interno, rapidez, facilidade de limpeza,
+    design e custo-benefício.
+
   </div>
+
 
   <div class="attention">
-    <strong>Antes de comprar:</strong> o modelo analisado utiliza tomada de
-    20 A. Confira também a voltagem selecionada no anúncio.
+
+    <strong>Antes de comprar:</strong>
+    o modelo analisado utiliza tomada de 20 A. Confira também a voltagem
+    selecionada no anúncio.
+
   </div>
 
-  <a class="button"
-     href="https://meli.la/1k4Vh4h"
-     target="_blank"
-     rel="nofollow sponsored noopener">
-     Ver preço no Mercado Livre →
+
+  <a
+    class="button"
+    href="https://meli.la/1k4Vh4h"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    Ver preço no Mercado Livre →
   </a>
+
 
   <div class="small">
     Preço e disponibilidade podem mudar a qualquer momento.
@@ -972,59 +937,112 @@ como cada configuração se posiciona.
 </div>
 
 
+<!-- ELGIN QUAD FRY -->
+
 <div class="product">
 
-  <span class="product-label">4,2 litros • cesto tradicional</span>
+  <span class="product-label">
+    4,2 litros • cesto tradicional
+  </span>
 
   <h3>Elgin Quad Fry</h3>
+
 
   <div class="specs">
     4,2 L • 1400 W • 80–200 °C • timer de 60 min • Air Circuit 360º
   </div>
-  <div class="product-image">
-  <img
-    src="/imagens/elgin-quad-fry-42l.jpg"
-    alt="Air Fryer Elgin Quad Fry 4,2 litros"
-    loading="lazy"
-  >
-</div>
 
-  <p>
-    A Quad Fry mantém o formato tradicional e acrescenta recursos voltados
-    à praticidade e segurança. O formato quadrado ajuda no aproveitamento
-    do espaço interno.
-  </p>
 
-  <div class="product-info">
-    <div><strong>Revestimento:</strong> Black Resist triplo antiaderente.</div>
-    <div><strong>Limpeza:</strong> grelha removível e bandeja coletora.</div>
-    <div><strong>Segurança:</strong> proteção contra superaquecimento, alça fria, base antiderrapante e desligamento automático.</div>
-    <div><strong>Dimensões informadas:</strong> 29,6 × 35,8 × 23,8 cm e aproximadamente 3,3 kg.</div>
+  <div class="product-main">
+
+
+    <div class="product-image">
+
+      <img
+        src="/imagens/elgin-quad-fry-42l.jpg"
+        alt="Air Fryer Elgin Quad Fry 4,2 litros"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div class="product-copy">
+
+      <p>
+        A Quad Fry mantém o formato tradicional e acrescenta recursos voltados
+        à praticidade e segurança. O formato quadrado ajuda no aproveitamento
+        do espaço interno.
+      </p>
+
+
+      <div class="capacity-example">
+
+        <strong>Quanto cabe?</strong><br>
+
+        O anúncio posiciona os 4,2 L para porções individuais ou pequenas
+        refeições, mas não fornece uma equivalência em quantidade de alimentos
+        como a utilizada pela Mondial nos modelos AFN-40 e AFN-50.
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div>
+          <strong>Revestimento:</strong>
+          Black Resist triplo antiaderente.
+        </div>
+
+        <div>
+          <strong>Limpeza:</strong>
+          grelha removível e bandeja coletora.
+        </div>
+
+        <div>
+          <strong>Segurança:</strong>
+          proteção contra superaquecimento, alça fria, base antiderrapante
+          e desligamento automático.
+        </div>
+
+        <div>
+          <strong>Dimensões informadas:</strong>
+          29,6 × 35,8 × 23,8 cm e aproximadamente 3,3 kg.
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="capacity-example">
-    <strong>Quanto cabe?</strong><br>
-    O anúncio posiciona os 4,2 L para porções individuais ou pequenas
-    refeições, mas não fornece uma equivalência em quantidade de alimentos
-    como a utilizada pela Mondial nos modelos AFN-40 e AFN-50.
-  </div>
 
   <div class="buyers">
-    <strong>O que aparece nas avaliações:</strong> compradores destacam
-    facilidade de limpeza, funcionamento silencioso, formato quadrado,
-    qualidade do cozimento e custo-benefício.
+
+    <strong>O que aparece nas avaliações:</strong>
+    compradores destacam facilidade de limpeza, funcionamento silencioso,
+    formato quadrado, qualidade do cozimento e custo-benefício.
+
   </div>
+
 
   <div class="attention">
-    <strong>Antes de comprar:</strong> confira a voltagem selecionada no anúncio.
+
+    <strong>Antes de comprar:</strong>
+    confira a voltagem selecionada no anúncio.
+
   </div>
 
-  <a class="button"
-     href="https://meli.la/2pLHYVf"
-     target="_blank"
-     rel="nofollow sponsored noopener">
-     Ver preço no Mercado Livre →
+
+  <a
+    class="button"
+    href="https://meli.la/2pLHYVf"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    Ver preço no Mercado Livre →
   </a>
+
 
   <div class="small">
     Preço e disponibilidade podem mudar a qualquer momento.
@@ -1033,59 +1051,115 @@ como cada configuração se posiciona.
 </div>
 
 
+<!-- MONDIAL AFN-50 -->
+
 <div class="product">
 
-  <span class="product-label">5 litros • cesto tradicional</span>
+  <span class="product-label">
+    5 litros • cesto tradicional
+  </span>
 
   <h3>Mondial AFN-50-BI</h3>
+
 
   <div class="specs">
     5 L • 1900 W • 450 cm² de área plana • até 200 °C • timer de 60 min
   </div>
-<div class="product-image">
-  <img
-    src="/imagens/afn-50-bi.jpg"
-    alt="Air Fryer Mondial AFN-50-BI 5 litros"
-    loading="lazy"
-  >
-</div>
-  <p>
-    A AFN-50 aumenta a capacidade nominal para 5 litros, a área plana
-    para 450 cm² e a potência para 1900 W, mantendo a proposta de
-    air fryer tradicional com cesto quadrado.
-  </p>
 
-  <div class="capacity-example">
-    <strong>Quanto cabe?</strong><br>
-    A Mondial ilustra a capacidade com os mesmos exemplos da AFN-40:
-    até 16 mini-hambúrgueres, 16 tulipas de frango,
-    5 postas de salmão ou 1 bolo médio.
+
+  <div class="product-main">
+
+
+    <div class="product-image">
+
+      <img
+        src="/imagens/afn-50-bi.jpg"
+        alt="Air Fryer Mondial AFN-50-BI 5 litros"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div class="product-copy">
+
+      <p>
+        A AFN-50 aumenta a capacidade nominal para 5 litros, a área plana
+        para 450 cm² e a potência para 1900 W, mantendo a proposta de
+        air fryer tradicional com cesto quadrado.
+      </p>
+
+
+      <div class="capacity-example">
+
+        <strong>Quanto cabe?</strong><br>
+
+        A Mondial ilustra a capacidade com os mesmos exemplos da AFN-40:
+        até 16 mini-hambúrgueres, 16 tulipas de frango,
+        5 postas de salmão ou 1 bolo médio.
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div>
+          <strong>Revestimento:</strong>
+          antiaderente Duraflon.
+        </div>
+
+        <div>
+          <strong>Potência:</strong>
+          1900 W.
+        </div>
+
+        <div>
+          <strong>Segurança:</strong>
+          proteção contra superaquecimento, alça resistente ao calor
+          e desligamento automático.
+        </div>
+
+        <div>
+          <strong>Uso:</strong>
+          a fabricante posiciona os 5 L para preparos que podem ser
+          compartilhados com a família.
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="product-info">
-    <div><strong>Revestimento:</strong> antiaderente Duraflon.</div>
-    <div><strong>Potência:</strong> 1900 W.</div>
-    <div><strong>Segurança:</strong> proteção contra superaquecimento, alça resistente ao calor e desligamento automático.</div>
-    <div><strong>Uso:</strong> a fabricante posiciona os 5 L para preparos que podem ser compartilhados com a família.</div>
-  </div>
 
   <div class="buyers">
-    <strong>O que aparece nas avaliações:</strong> compradores destacam
-    capacidade, praticidade, facilidade de uso e limpeza e custo-benefício.
+
+    <strong>O que aparece nas avaliações:</strong>
+    compradores destacam capacidade, praticidade, facilidade de uso
+    e limpeza e custo-benefício.
+
   </div>
+
 
   <div class="attention">
-    <strong>Vale observar:</strong> apesar de passar de 4 L para 5 L em
-    relação à AFN-40, os exemplos de quantidade de alimentos apresentados
-    pela fabricante são os mesmos. A área plana aumenta de 410 para 450 cm².
+
+    <strong>Vale observar:</strong>
+    apesar de passar de 4 L para 5 L em relação à AFN-40, os exemplos
+    de quantidade de alimentos apresentados pela fabricante são os mesmos.
+    A área plana aumenta de 410 para 450 cm².
+
   </div>
 
-  <a class="button"
-     href="https://meli.la/1mse325"
-     target="_blank"
-     rel="nofollow sponsored noopener">
-     Ver preço no Mercado Livre →
+
+  <a
+    class="button"
+    href="https://meli.la/1mse325"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    Ver preço no Mercado Livre →
   </a>
+
 
   <div class="small">
     Confira a voltagem, o preço e a disponibilidade no anúncio.
@@ -1094,63 +1168,123 @@ como cada configuração se posiciona.
 </div>
 
 
+<!-- MONDIAL OVEN -->
+
 <div class="product">
 
-  <span class="product-label">2 em 1 • Air Fryer + Forno</span>
+  <span class="product-label">
+    2 em 1 • Air Fryer + Forno
+  </span>
 
   <h3>Mondial AFON-12L-BI</h3>
+
 
   <div class="specs">
     12 L totais • cesto de 5 L • 2000 W (127 V) / 2200 W (220 V) • timer de 90 min
   </div>
-  <div class="product-image">
-  <img
-    src="/imagens/afon-12l-bi.jpg"
-    alt="Air Fryer Oven Mondial AFON-12L-BI 12 litros"
-    loading="lazy"
-  >
-</div>
 
-  <p>
-    A AFON-12L-BI é a configuração mais diferente desta seleção.
-    Em vez de funcionar apenas como uma air fryer de cesto, a Mondial
-    a apresenta como <strong>2 em 1: Air Fryer + Forno</strong>.
-  </p>
 
-  <div class="capacity-example">
-    <strong>Como os 12 litros são utilizados?</strong><br>
-    Os 12 L correspondem à capacidade interna total. O aparelho possui
-    cesto de 5 L e três níveis internos para as assadeiras, permitindo
-    distribuir os preparos verticalmente.
+  <div class="product-main">
+
+
+    <div class="product-image">
+
+      <img
+        src="/imagens/afon-12l-bi.jpg"
+        alt="Air Fryer Oven Mondial AFON-12L-BI 12 litros"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div class="product-copy">
+
+      <p>
+        A AFON-12L-BI é a configuração mais diferente desta seleção.
+        Em vez de funcionar apenas como uma air fryer de cesto, a Mondial
+        a apresenta como <strong>2 em 1: Air Fryer + Forno</strong>.
+      </p>
+
+
+      <div class="capacity-example">
+
+        <strong>Como os 12 litros são utilizados?</strong><br>
+
+        Os 12 L correspondem à capacidade interna total. O aparelho possui
+        cesto de 5 L e três níveis internos para as assadeiras, permitindo
+        distribuir os preparos verticalmente.
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div>
+          <strong>Acessórios:</strong>
+          2 assadeiras perfuradas, 1 assadeira fechada/coletora
+          e luva de silicone.
+        </div>
+
+        <div>
+          <strong>Painel:</strong>
+          digital touch com 10 funções predefinidas.
+        </div>
+
+        <div>
+          <strong>Visualização:</strong>
+          porta de vidro temperado com amplo visor e iluminação interna.
+        </div>
+
+        <div>
+          <strong>Timer:</strong>
+          até 90 minutos.
+        </div>
+
+        <div>
+          <strong>Dimensões:</strong>
+          aproximadamente 39 × 32 × 36,1 cm, considerando o puxador.
+        </div>
+
+        <div>
+          <strong>Peso:</strong>
+          aproximadamente 7,6 kg.
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="product-info">
-    <div><strong>Acessórios:</strong> 2 assadeiras perfuradas, 1 assadeira fechada/coletora e luva de silicone.</div>
-    <div><strong>Painel:</strong> digital touch com 10 funções predefinidas.</div>
-    <div><strong>Visualização:</strong> porta de vidro temperado com amplo visor e iluminação interna.</div>
-    <div><strong>Timer:</strong> até 90 minutos.</div>
-    <div><strong>Dimensões:</strong> aproximadamente 39 × 32 × 36,1 cm, considerando o puxador.</div>
-    <div><strong>Peso:</strong> aproximadamente 7,6 kg.</div>
-  </div>
 
   <div class="buyers">
-    <strong>O que aparece nas avaliações:</strong> compradores destacam
-    espaço interno, variedade de preparos, facilidade de uso e limpeza,
-    design e qualidade do cozimento.
+
+    <strong>O que aparece nas avaliações:</strong>
+    compradores destacam espaço interno, variedade de preparos,
+    facilidade de uso e limpeza, design e qualidade do cozimento.
+
   </div>
+
 
   <div class="attention">
-    <strong>Antes de comprar:</strong> ela ocupa mais espaço e pesa
-    consideravelmente mais que uma air fryer tradicional. O modelo
-    utiliza tomada de 20 A e não é bivolt.
+
+    <strong>Antes de comprar:</strong>
+    ela ocupa mais espaço e pesa consideravelmente mais que uma air fryer
+    tradicional. O modelo utiliza tomada de 20 A e não é bivolt.
+
   </div>
 
-  <a class="button"
-     href="https://meli.la/1EkoyYN"
-     target="_blank"
-     rel="nofollow sponsored noopener">
-     Ver preço no Mercado Livre →
+
+  <a
+    class="button"
+    href="https://meli.la/1EkoyYN"
+    target="_blank"
+    rel="nofollow sponsored noopener"
+  >
+    Ver preço no Mercado Livre →
   </a>
+
 
   <div class="small">
     Confira a voltagem, o preço e a disponibilidade atualizados no anúncio.
@@ -1159,94 +1293,127 @@ como cada configuração se posiciona.
 </div>
 
 
-<h2 id="decisao">Então, como decidir?</h2>
+<h2 id="decisao">
+  Então, como decidir?
+</h2>
 
 <p>
-Se você prefere a simplicidade de colocar os alimentos em um único cesto,
-os modelos tradicionais de 4 a 5 litros são o ponto mais direto de
-comparação. Nesse grupo, não olhe apenas para os litros: área útil,
-revestimento, potência, recursos de segurança e preço também podem
-mudar a decisão.
+Se você prefere a simplicidade de um único cesto, os modelos tradicionais
+de 4 a 5 litros permitem uma comparação mais direta. Nesse grupo, vale
+observar capacidade útil, revestimento, potência, recursos de segurança
+e preço — não apenas o número de litros.
 </p>
 
 <p>
-A comparação entre AFN-40 e AFN-50 mostra isso bem. A segunda possui
-mais volume, potência e área plana, mas os exemplos de quantidade de
-alimentos divulgados pela Mondial são iguais. Nesse caso, comparar
-também a diferença de preço entre as duas pode ajudar a entender o que
-você recebe pelo valor adicional.
+A comparação entre AFN-40 e AFN-50 mostra bem essa diferença: a AFN-50
+tem maior volume nominal, potência e área plana, mas a Mondial utiliza
+os mesmos exemplos de quantidade de alimentos para os dois modelos.
+Comparar também a diferença de preço ajuda a entender o que o modelo
+maior acrescenta na prática.
 </p>
 
 <p>
-Já a Oven de 12 L deve ser encarada de outra forma. Ela faz mais sentido
-para quem valoriza a proposta 2 em 1, o uso de assadeiras, os três níveis,
-o painel digital e a possibilidade de acompanhar o preparo pelo visor.
-Em contrapartida, exige mais espaço na cozinha.
-</p>
-
-<p>
-Mais importante do que procurar simplesmente a air fryer com o maior
-número de litros é identificar <strong>como você pretende utilizá-la</strong>.
+Já a AFON-12L-BI segue outra proposta: combina Air Fryer + Forno, utiliza
+cesto e assadeiras em diferentes níveis e permite acompanhar o preparo
+pelo visor. Em troca dessa versatilidade, ocupa mais espaço na cozinha.
 </p>
 
 
-<h2 id="faq">Perguntas frequentes</h2>
+<h2 id="faq">
+  Perguntas frequentes
+</h2>
+
 
 <div class="faq">
-  <h3>Air fryer de 4 litros é pequena?</h3>
+
+  <h3>
+    Air fryer de 4 litros é pequena?
+  </h3>
+
   <p>
-    Não necessariamente. Na AFN-40-BFT analisada, por exemplo, a Mondial
-    informa 410 cm² de área plana e ilustra o cesto com até 16
-    mini-hambúrgueres, 16 tulipas de frango, 5 postas de salmão ou
-    um bolo médio. O formato do cesto importa junto com a capacidade.
+    Não necessariamente. Na AFN-40-BFT analisada, a Mondial informa
+    410 cm² de área plana e ilustra o cesto com até 16 mini-hambúrgueres,
+    16 tulipas de frango, 5 postas de salmão ou um bolo médio. O formato
+    do cesto importa junto com a capacidade.
   </p>
+
 </div>
 
-<div class="faq">
-  <h3>Air fryer de 5 litros cabe muito mais que uma de 4 litros?</h3>
-  <p>
-    Depende dos modelos comparados. AFN-40 e AFN-50, por exemplo,
-    possuem respectivamente 410 e 450 cm² de área plana, mas a Mondial
-    apresenta as mesmas quantidades nos quatro exemplos de alimentos
-    divulgados para os dois modelos.
-  </p>
-</div>
 
 <div class="faq">
-  <h3>Quanto maior a potência, melhor?</h3>
+
+  <h3>
+    Air fryer de 5 litros cabe muito mais que uma de 4 litros?
+  </h3>
+
+  <p>
+    Depende dos modelos comparados. AFN-40 e AFN-50 possuem respectivamente
+    410 e 450 cm² de área plana, mas a Mondial apresenta as mesmas quantidades
+    nos quatro exemplos de alimentos divulgados para os dois modelos.
+  </p>
+
+</div>
+
+
+<div class="faq">
+
+  <h3>
+    Quanto maior a potência, melhor?
+  </h3>
+
   <p>
     Não necessariamente. Potência deve ser analisada junto com capacidade,
     projeto do aparelho e uso pretendido. Um número maior isoladamente
     não determina qual produto atende melhor a determinada rotina.
   </p>
+
 </div>
 
+
 <div class="faq">
-  <h3>Uma Air Fryer Oven de 12 L tem cesto de 12 L?</h3>
+
+  <h3>
+    Uma Air Fryer Oven de 12 L tem cesto de 12 L?
+  </h3>
+
   <p>
     Não no modelo analisado. Na Mondial AFON-12L-BI, os 12 L correspondem
     à capacidade interna total. O cesto possui 5 L, e o aparelho também
     utiliza assadeiras distribuídas em três níveis internos.
   </p>
+
 </div>
 
+
 <div class="faq">
-  <h3>O que significa Air Fryer Oven 2 em 1?</h3>
+
+  <h3>
+    O que significa Air Fryer Oven 2 em 1?
+  </h3>
+
   <p>
     No caso da AFON-12L-BI, a Mondial a apresenta como Air Fryer + Forno.
     Além do cesto, ela possui assadeiras, porta frontal com visor,
     iluminação interna e funções predefinidas.
   </p>
+
 </div>
 
+
 <div class="faq">
-  <h3>É necessário verificar a tomada?</h3>
+
+  <h3>
+    É necessário verificar a tomada?
+  </h3>
+
   <p>
     Sim. Além da tensão correta, confira o tipo de plugue e a corrente
     exigida pelo fabricante. Alguns dos modelos analisados utilizam
     tomada de 20 A.
   </p>
+
 </div>
+
 
 </article>
 
@@ -1257,20 +1424,38 @@ número de litros é identificar <strong>como você pretende utilizá-la</strong
 
     <h3>Neste guia</h3>
 
-    <a href="#capacidade">Quantos litros escolher?</a>
-    <a href="#tradicional">Tradicional ou Oven?</a>
-    <a href="#potencia">Potência</a>
-    <a href="#espaco">Espaço na bancada</a>
-    <a href="#limpeza">Cesto e limpeza</a>
-    <a href="#controles">Controles e timer</a>
-    <a href="#voltagem">Voltagem e tomada</a>
-    <a href="#modelos">Comparar modelos</a>
-    <a href="#decisao">Como decidir</a>
-    <a href="#faq">Perguntas frequentes</a>
+    <a href="#o-que-observar">
+      O que observar
+    </a>
+
+    <a href="#tipos">
+      Tradicional ou Oven?
+    </a>
+
+    <a href="#revestimentos">
+      Duraflon x Black Resist
+    </a>
+
+    <a href="#modelos">
+      Comparar modelos
+    </a>
+
+    <a href="#detalhes">
+      Conheça cada modelo
+    </a>
+
+    <a href="#decisao">
+      Como decidir
+    </a>
+
+    <a href="#faq">
+      Perguntas frequentes
+    </a>
 
   </div>
 
 </aside>
+
 
 </div>
 
